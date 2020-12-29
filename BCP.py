@@ -6,6 +6,12 @@ import math
 import numpy as np
 from pyswarm import pso
 
+# Studi Kasus/ Parameter Default dalam Script ini diambil dari
+# Minimizing Cutting Wastes of Reinforcement Steel BarsUsing Genetic Algorithms and Integer Programming Model
+# O. Salem, M.ASCE, A. Shanin, and Y. Khalifa
+# 10.1061/(ASCE(0733-9364(2007)133:12(982)
+
+
 # Masukan Ukuran Tulangan (1 lonjor standard)
 Ls = 12.19;
 unit_weight = 52;
