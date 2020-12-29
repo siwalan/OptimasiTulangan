@@ -1,10 +1,10 @@
 """
-Created on Mon Jun 24 02:03:48 2019
-
 @author: gho
 """
+
 import math
 import numpy as np
+from pyswarm import pso
 
 # Masukan Ukuran Tulangan (1 lonjor standard)
 Ls = 12.19;
@@ -22,7 +22,8 @@ D = np.array([4,4,4,4,4,4]);
 
 
 # Menghasilkan Matrix Kosong Untuk Membuat Pattern
-A = np.zeros((1,L.shape[0]))        
+A = np.zeros((1,L.shape[0]));
+             
 i = 0;
 
 for j in range (0,L.shape[0]):
@@ -61,7 +62,7 @@ while k>0:
     i = i+1
     
 A = np.resize(A, ((A.shape[0]-1),A.shape[1]))
-x_var_number = A.shape[0]
+
 # Matrix A mengandung Pattern yang dapat dipakai    
 #
 #<---------------------------------------------->
@@ -81,15 +82,9 @@ def DSP(x):
         f = 10^9999
     return f
 
+ub= A.shape[0] * [4]
+lb= A.shape[0] * [0]
 
-def PSO(iter_num,swarm_size,var_x_number):
-    pData = np.random.rand(swarm_size,var_x_number)*4
-    pVData = np.randon.rand(swarm_size,var_x_number)*4
-    
-    for determine_fitness_iter in (0,iter_num):
-        pData[]
-        
-    
-    return best_value
-
+xopt, fopt = pso(DSP, lb, ub,omega=0.9, phip=0.9, phig=0.9,  swarmsize=4000, maxiter=1000,minstep=5e-2,
+   minfunc=1e-15)
 
